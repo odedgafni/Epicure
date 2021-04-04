@@ -1,0 +1,16 @@
+<div class="flex container">
+    <img src="/assets/restaurant-pictures/Claro-Banner/claro-banner.jpg">
+    <div class="header">
+        <p>{{restaurant.title}}</p>
+        <p>{{restaurant.description}}</p>
+        <p><span><img src="../../../assets/icons/clock-icon.svg"></span> Open now </p>
+    </div>
+    <div class="flex menus">
+        <a href="#" class="menu-active">Breakfast</a>
+        <a>Lunch</a>
+        <a>Dinner</a>
+    </div>
+    <div class="flex card-list">
+        <app-card *ngFor="let dish of dishes" [cardData]="dish" [cardClass]="'dish'"></app-card>
+    </div>
+</div>

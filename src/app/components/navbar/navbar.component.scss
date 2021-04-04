@@ -1,0 +1,46 @@
+@import "../../../styles/mixin.scss";
+
+$nav-item-margin: 30px;
+
+nav {
+    // align-items: center;
+    padding: 10px;
+    // justify-content: space-around;
+    border-bottom: 1px solid rgb(241, 241, 241);
+
+
+    .logo {
+        margin-right: 15px;
+    }
+
+    .nav-item {
+        // align-self: center;
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-right: $nav-item-margin;
+    }
+    .nav-title {
+        // align-self: center;
+        font-size: 28px;
+        margin-right: $nav-item-margin;
+    }
+
+    .icon {
+        margin-right: $nav-item-margin;
+        // align-self: center;
+    }
+
+    .search {
+        padding: 5px 15px;
+        margin-right: 30px;
+        width: 415px;
+
+        input {
+            width: 100%;
+            font-size: 18px;
+        }
+        img {
+            margin: 0 auto;
+        }
+    }
+}

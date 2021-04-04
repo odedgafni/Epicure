@@ -1,0 +1,14 @@
+<div class="card" [ngClass]="cardClass" (click)="redirect()">
+    <p class="header" *ngIf="cardClass === 'signature-dish'">{{cardData.restoName}}</p>
+    <img class="img" src={{cardData.img}}>
+    <div class="card-body">
+        <p class="title">{{cardData.title}}</p>
+        <p class="description">{{cardData.description}}</p>
+    </div>
+    <div class="flex card-bottom">
+        <div *ngIf="cardData.price && cardData.icon">
+            <img class="icon" src={{cardData.icon}}>
+            <p class="price"><span><img src="/assets/icons/ils.svg"></span> {{cardData.price}}</p>
+        </div>
+    </div>
+</div>

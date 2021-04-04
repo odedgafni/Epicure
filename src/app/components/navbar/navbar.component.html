@@ -1,0 +1,31 @@
+<nav fxFlex.gt-sm="100%" class="flex">
+    <div class="flex left-nav">
+        <div flexLayout='row' class="logo">
+            <img src="/assets/logo/logo.jpg">
+        </div>
+        <div fxHide.lt-md class="nav-title">
+            <a routerLink="/">EPICURE</a>
+        </div>
+        <div fxHide.lt-md class="nav-item">
+            <a routerLink="restaurants">Restaurants</a>
+        </div>
+        <div fxHide.lt-md class="nav-item">
+            <a href="#">Chefs</a>
+        </div>
+    </div>
+    <div fxLayoutAlign.lt-md="end" fxLayoutAlign.gt-md="space-around" class="flex right-nav">
+        <div fxHide.lt-md class="flex search">
+            <input type="text" placeholder="Search for restaurant cuisine, chef">
+            <img class="icon" src="/assets/icons/search-icon.svg">
+        </div>
+        <a fxHide.gt-sm href="#" class="icon">
+            <img src="/assets/icons/search-icon.svg">
+        </a>
+        <a href="#" class="icon">
+            <img src="/assets/icons/user-icon.svg">
+        </a>
+        <a href="#" class="icon">
+            <img src="/assets/icons/bag-icon.svg">
+        </a>
+    </div>
+</nav>

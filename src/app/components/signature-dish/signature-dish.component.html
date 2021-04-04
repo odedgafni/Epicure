@@ -1,0 +1,9 @@
+<div class="container">
+    <p class="header">SIGNATURE DISH OF :</p>
+    <swiper class="adjust-swiper" [config]="swiperConfig" fxFlex="auto" fxHide.gt-sm>
+        <app-card *ngFor="let dish of dishes" 
+            [cardData]="dish" 
+            [cardClass]="'signature-dish'">
+        </app-card>
+    </swiper>
+</div>

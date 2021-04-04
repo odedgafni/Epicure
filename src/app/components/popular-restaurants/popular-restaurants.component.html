@@ -1,0 +1,12 @@
+<div class="flex container">
+    <p class="header">THE POPULAR RESTAURANTS IN EPICURE :</p>
+    <swiper [config]="swiperConfig" fxFlex="auto" fxHide.gt-sm>
+        <app-card *ngFor="let restaurant of restaurants" 
+            [cardData]="restaurant" 
+            [cardClass]="'popular-resto'">
+        </app-card>
+    </swiper>
+    <a class="link" href="#">All Restaurants
+        <span><img src="/assets/icons/all-restaurants-arrows.svg"></span>
+    </a>
+</div>

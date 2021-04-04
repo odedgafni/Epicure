@@ -1,0 +1,10 @@
+<div class="flex resto-filter">
+    <button class="reset-btn" (click)="getAllResto()">All</button>
+    <button class="reset-btn" (click)="getNewResto()">New</button>
+    <button class="reset-btn" (click)="getPopularResto()">Most Popular</button>
+    <button class="reset-btn">Open Now</button>
+</div>
+<div class="flex container">
+    <app-card *ngFor="let restaurant of restaurants" [cardData]="restaurant" [cardClass]="'resto-page'">
+    </app-card>
+</div>

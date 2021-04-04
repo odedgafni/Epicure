@@ -1,0 +1,45 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.search {
+    border: 1px solid grey;
+    border-radius: 5px;
+
+    input {
+        @include custom-input;
+    }
+}
+
+.header {
+    font-size: 30px;
+}
+
+.jumbotron {
+    padding: 10px;
+    background-color: $lightgrey;
+}
+
+.reset-btn {
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: hidden;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+}
+
+.menu-active {
+    text-decoration: underline;
+    text-decoration-color: #fcd182;
+    text-decoration-thickness: 10%;
+}

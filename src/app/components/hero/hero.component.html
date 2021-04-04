@@ -1,0 +1,16 @@
+<div class="hero">
+    <img src="/assets/hero-picture/hero-picture.jpg">
+    <div class="search-component">
+        <h3>Epicure works with the top
+            chef restaurants in Tel Aviv
+        </h3>
+        <div class="search flex">
+            <img class="icon" src="/assets/icons/search-icon.svg">
+            <input #search type="text" placeholder="Search for restaurant cuisine, chef"
+                (input)="handleInput(search.value)">
+        </div>
+        <div class="flex results" *ngFor="let result of results$ | async">
+            <p>{{result.title}}</p>
+        </div>
+    </div>
+</div>

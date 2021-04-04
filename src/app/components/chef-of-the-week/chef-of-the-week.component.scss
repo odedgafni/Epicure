@@ -1,0 +1,65 @@
+@import "../../../styles/variables.scss";
+
+.container {
+    margin: 90px auto;
+    max-width: 1100px;
+
+    .header {
+        &:not(:last-child) {
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        &:last-child {
+            letter-spacing: 1.3px;
+            margin: 60px 0 10px 35px;
+        }
+    }
+
+    .chef-container {
+        padding-top: 10px;
+        margin: auto;
+        align-items: flex-start;
+        justify-content: center;
+        // flex-wrap: wrap;
+
+        .chef-image {
+            background-image: url("../../../assets/chef-of-the-week/chef.jpg");
+            background-size: cover;
+            width: 430px;
+            height: 340px;
+            padding: 0;
+            margin: 0 60px;
+            display: flex;
+            align-items: flex-end;
+
+            .chef-name {
+                width: 430px;
+                height: 50px;
+                font-size: 40px;
+                font-family: $boldFont;
+                letter-spacing: 1.5px;
+                background-color: white;
+                opacity: 0.8;
+                text-align: center;
+                padding: 15px;
+            }
+        }
+
+        .chef-info {
+            margin: 0;
+            padding-right: 50px;
+            letter-spacing: 1.1px;
+            font-size: 25px;
+            // width: 540px;
+        }
+    }
+
+    .chef-resto {
+        margin: 60px 50px;
+
+        .header {
+            text-align: start;
+            margin: 10px;
+        }
+    }
+}

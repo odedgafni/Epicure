@@ -1,0 +1,25 @@
+@import '../../../styles/variables.scss';
+
+.container {
+    margin: 100px auto 40px;
+    padding: 0 65px;
+    flex-direction: column;
+    max-width: 1140px;
+
+    .header {
+        text-align: center;
+    }
+
+    .link {
+        margin-left: auto;
+        margin-top: 30px;
+        letter-spacing: 2px;
+        font-family: $boldFont;
+        font-size: 30px;
+    }
+
+    a {
+        align-self: flex-end;
+        padding: 0 10px;
+    }
+}
