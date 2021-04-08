@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
+import { ScreenWatcherService } from 'src/app/services/screen-watcher.service';
+
 
 @Component({
   selector: 'app-chef-of-the-week',
@@ -25,9 +29,30 @@ export class ChefOfTheWeekComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  swiperConfig: SwiperConfigInterface;
 
-  ngOnInit(): void {
+  constructor(private screenWatcherService: ScreenWatcherService,) {
+    this.swiperConfig = {
+      direction: 'horizontal',
+      slidesPerView: 1,
+      simulateTouch: true,
+      centeredSlidesBounds: true,
+      centeredSlides: true,
+      centerInsufficientSlides: true,
+    }
   }
 
+  ngOnInit(): void {
+    this.adjustSwiperWidth()
+  }
+
+  adjustSwiperWidth() {
+    this.screenWatcherService.screenWidth$.subscribe(screenWidth => {
+      if (screenWidth < 600) {
+        this.swiperConfig.width = 160;
+      } else {
+        this.swiperConfig.width = 240;
+      }
+    })
+  }
 }

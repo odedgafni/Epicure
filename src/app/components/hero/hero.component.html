@@ -1,16 +1,30 @@
 <div class="hero">
-    <img src="/assets/hero-picture/hero-picture.jpg">
-    <div class="search-component">
-        <h3>Epicure works with the top
-            chef restaurants in Tel Aviv
+    <img src="/assets/hero-picture/hero-picture.jpg" 
+        fxLayout="row wrap" 
+        [ngStyle.lt-sm]="{'height': '270px'}">
+    <div class="search-component" 
+        fxLayout="row wrap" 
+        fxFlex="0 100 90%">
+        <h3 [ngStyle.lt-sm]="{'font-size': '16px', 'letter-spacing':'1px'}">
+            Epicure works with the top chef restaurants in Tel Aviv
         </h3>
-        <div class="search flex">
-            <img class="icon" src="/assets/icons/search-icon.svg">
+        <div class="search" 
+            fxLayout="row" 
+            fxLayoutAlign="start center"
+            [ngStyle.lt-sm]="{'height': '35px', 'width': '270px'}">
+            <img class="icon" src="/assets/icons/search-icon.svg" 
+                [ngStyle.lt-sm]="{'width': '16px'}">
             <input #search type="text" placeholder="Search for restaurant cuisine, chef"
+                [ngStyle.lt-sm]="{'font-size': '13px', 'padding': '0'}"
                 (input)="handleInput(search.value)">
         </div>
-        <div class="flex results" *ngFor="let result of results$ | async">
-            <p>{{result.title}}</p>
+        <div class="results" *ngFor="let result of results$ | async" 
+            fxLayout="column" 
+            fxLayoutAlign="start center">
+            <p>Restaurants :</p>
+            <div class="result">
+                <p>{{result.title}}</p>
+            </div>
         </div>
     </div>
 </div>

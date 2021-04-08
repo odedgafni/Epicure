@@ -1,16 +1,18 @@
-<div class="flex container">
-    <img src="/assets/restaurant-pictures/Claro-Banner/claro-banner.jpg">
+<div class="container" fxLayout="column">
+    <img src="/assets/restaurant-pictures/Claro-Banner/claro-banner.jpg"
+        fxLayout="row wrap"
+        [ngStyle.lt-sm]="{'max-width': '600px', 'height': '250px'}">
     <div class="header">
         <p>{{restaurant.title}}</p>
-        <p>{{restaurant.description}}</p>
-        <p><span><img src="../../../assets/icons/clock-icon.svg"></span> Open now </p>
+        <p [ngStyle.lt-sm]="{'font-size': '24px', 'padding': '5px'}">{{restaurant.description}}</p>
+        <p><img src="/assets/icons/clock-icon.svg">Open now </p>
     </div>
     <div class="flex menus">
         <a href="#" class="menu-active">Breakfast</a>
-        <a>Lunch</a>
-        <a>Dinner</a>
+        <a href="#">Lunch</a>
+        <a href="#">Dinner</a>
     </div>
-    <div class="flex card-list">
+    <div class="card-list" fxLayout="row wrap">
         <app-card *ngFor="let dish of dishes" [cardData]="dish" [cardClass]="'dish'"></app-card>
     </div>
 </div>

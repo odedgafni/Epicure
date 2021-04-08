@@ -21,6 +21,7 @@ import { IconMapComponent } from './components/icon-map/icon-map.component';
 import { RestaurantsPageComponent } from './components/restaurants-page/restaurants-page.component';
 import { FooterLinksComponent } from './components/footer-links/footer-links.component';
 import { RestaurantPageComponent } from './components/restaurant-page/restaurant-page.component';
+import { MobileNavLinksComponent } from './components/mobile-nav-links/mobile-nav-links.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -41,7 +42,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     IconMapComponent,
     RestaurantsPageComponent,
     FooterLinksComponent,
-    RestaurantPageComponent
+    RestaurantPageComponent,
+    MobileNavLinksComponent
   ],
   imports: [
     BrowserModule,

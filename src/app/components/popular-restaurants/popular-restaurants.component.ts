@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
-import { SwiperService } from '../../services/swiper.service';
-
-import { CardService } from '../../services/card.service';
+import { CardService } from 'src/app/services/card.service';
+import { ScreenWatcherService } from 'src/app/services/screen-watcher.service';
 
 @Component({
   selector: 'app-popular-restaurants',
@@ -18,18 +17,36 @@ export class PopularRestaurantsComponent implements OnInit {
 
   restaurants = [];
 
-  getRestaurants() {
-    this.cardService.getPopularResto().subscribe(data => this.restaurants = data);
-  }
-
   constructor(
-    private swiperService: SwiperService,
+    private screenWatcherService: ScreenWatcherService,
     private cardService: CardService) {
-    this.swiperConfig = this.swiperService.config;
+      this.swiperConfig = {
+      direction: 'horizontal',
+      slidesPerView: 1,
+      simulateTouch: true,
+      centeredSlidesBounds: true,
+      centeredSlides: true,
+      centerInsufficientSlides: true,
+    }
   }
 
   ngOnInit(): void {
+    this.adjustSwiperWidth()
     this.getRestaurants()
+  }
+
+  getRestaurants() {
+    this.cardService.getAllResto().subscribe(data => this.restaurants = data);
+  }
+
+  adjustSwiperWidth() {
+    this.screenWatcherService.screenWidth$.subscribe(screenWidth => {
+      if (screenWidth < 600) {
+        this.swiperConfig.width = 200;
+      } else {
+        this.swiperConfig.width = 370;
+      }
+    })
   }
 
 }

@@ -1,7 +1,21 @@
 .footer-links {
-    justify-content: center;
+    position: absolute;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
     border-top: 1px solid rgb(241, 241, 241);
     a {
-        margin: 35px;
+        margin: 35px; 
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-links {
+        padding: 20px 0;
+        height: 125px;
+        a {
+            margin: 15px;
+            font-size: 12px; 
+        }
     }
 }

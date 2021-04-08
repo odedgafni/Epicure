@@ -1,0 +1,13 @@
+@import "../../../styles/variables.scss";
+
+.jumbotron {
+    height: 125px;
+}
+
+.btn {
+    padding: 15px;
+    margin: 15px;
+    background-color: $sand;
+    font-size: 13px;
+    font-family: $boldFont;
+}

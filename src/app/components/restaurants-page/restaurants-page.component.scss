@@ -1,10 +1,16 @@
+@import "../../../styles/variables.scss";
+
+.title {
+    font-size: 20px;
+    font-family: $boldFont;
+    letter-spacing: 1.6px;
+}
 
 .resto-filter {
-    margin-top: 20px;
     justify-content: center;
 
     button {
-        margin: 20px;
+        margin: 10px 20px;
         font-size: 18px;
         letter-spacing: 2px;
     }
@@ -12,8 +18,17 @@
 
 .container {
     margin: 10px auto;
-    padding: 0 20px;
+    padding: 0 10px;
     max-width: 1150px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .resto-filter {
+        button {
+            margin: 5px 15px;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+        }
+    }
 }

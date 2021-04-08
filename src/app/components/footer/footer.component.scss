@@ -1,8 +1,6 @@
-@import '../../../styles/variables.scss';
+@import "../../../styles/variables.scss";
 
 .container {
-    justify-content: flex-start;
-    align-items: center;
     max-width: 1050px;
     margin: auto;
 
@@ -10,15 +8,24 @@
         max-width: 580px;
         margin: 25px 35px;
 
-        p:not(:first-child) {
+        .header {
+            font-size: 30px;
+        }
+
+        .about-text {
             font-size: 22px;
             letter-spacing: 1.8px;
         }
-
+    }
+    .logo {
+        margin: 20px 50px;
+    }
+    .btns {
+        margin: 0 35px;
         .btn {
             width: 180px;
             align-items: center;
-            margin: 15px 15px 15px 0;
+            margin: 15px 5px 15px 0;
             padding: 5px 10px;
             text-align: center;
             border: 1px solid black;
@@ -28,17 +35,54 @@
             .btn-text {
                 margin: auto;
                 font-size: 13px;
-                
-                
+
                 div:last-child {
                     font-size: 17px;
                 }
             }
         }
     }
-    .logo {
-        margin-left: 100px;
-    }
 }
 
+@media only screen and (max-width: 600px) {
+    .container {
+        .about {
+            margin: 0 35px;
+            text-align: center;
+            .header {
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+            .about-text {
+                font-size: 14px;
+            }
+        }
+        .logo {
+            margin: 10px 60px 30px;
+            img {
+                margin: auto;
+                width: 130px;
+                height: 130px;
+            }
+        }
+        .btns {
+            .btn {
+                width: 110px;
 
+                img {
+                    width: 15px;
+                    padding-right: 5px;
+                }
+
+                .btn-text {
+                    font-size: 9px;
+
+                    div:last-child {
+                        font-size: 11px;
+                        font-family: $boldFont;
+                    }
+                }
+            }
+        }
+    }
+}

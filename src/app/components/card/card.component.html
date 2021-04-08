@@ -1,14 +1,28 @@
-<div class="card" [ngClass]="cardClass" (click)="redirect()">
-    <p class="header" *ngIf="cardClass === 'signature-dish'">{{cardData.restoName}}</p>
-    <img class="img" src={{cardData.img}}>
+<div class="card" 
+    (click)="redirect()"
+    [ngClass]="cardClass" 
+    [ngStyle.lt-sm]="{'max-height':'600px','background-color':'white'}">
+    <p class="header" *ngIf="cardClass === 'signature-dish'" 
+        [ngStyle.lt-sm]="{'font-size': '16px'}">
+        {{cardData.restoName}}
+    </p>
+    <img class="img" src={{cardData.img}} 
+        [ngStyle.lt-sm]="{ 'padding': 0}">
     <div class="card-body">
-        <p class="title">{{cardData.title}}</p>
-        <p class="description">{{cardData.description}}</p>
+        <p class="title" 
+            [ngStyle.lt-sm]="{ 'margin-top': 0}">{{cardData.title}} </p>
+        <p class="description" 
+            [ngStyle.lt-sm]="{}">{{cardData.description}}</p>
     </div>
-    <div class="flex card-bottom">
-        <div *ngIf="cardData.price && cardData.icon">
-            <img class="icon" src={{cardData.icon}}>
-            <p class="price"><span><img src="/assets/icons/ils.svg"></span> {{cardData.price}}</p>
+    <div class="card-bottom" *ngIf="!cardData.icon"></div>
+    <div class="card-bottom"*ngIf="cardData.icon" >
+        <img class="icon" src={{cardData.icon}}>
+        <div *ngIf="cardData.price">
+            <div fxLayoutAlign="center center" [ngStyle.lt-sm]="{'margin-top': 0}">
+                <div class="line"></div>
+                <div class="price">₪ {{cardData.price}}</div>
+                <div class="line"></div>
+            </div>
         </div>
     </div>
 </div>

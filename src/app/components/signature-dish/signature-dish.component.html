@@ -1,6 +1,14 @@
-<div class="container">
-    <p class="header">SIGNATURE DISH OF :</p>
-    <swiper class="adjust-swiper" [config]="swiperConfig" fxFlex="auto" fxHide.gt-sm>
+<div class="container" 
+    fxLayout="column" 
+    [ngStyle.lt-lg]="{'padding-left': '20px'}">
+    <p class="header" 
+        fxLayout="row" 
+        fxLayoutAlign="center" 
+        [ngStyle.lt-sm]="{'font-size': '15px', 'margin': '40px auto 0'}">
+        SIGNATURE DISH OF : </p>
+    <swiper style="height: 740px;" 
+        [ngStyle.lt-sm]="{'height': '600px'}" 
+        [config]="swiperConfig">
         <app-card *ngFor="let dish of dishes" 
             [cardData]="dish" 
             [cardClass]="'signature-dish'">

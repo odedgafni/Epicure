@@ -1,12 +1,21 @@
-<div class="flex container">
-    <p class="header">THE POPULAR RESTAURANTS IN EPICURE :</p>
-    <swiper [config]="swiperConfig" fxFlex="auto" fxHide.gt-sm>
-        <app-card *ngFor="let restaurant of restaurants" 
+<div class="container" 
+    [ngStyle.lt-sm]="{'margin-top': '40px', 'padding-left': '20px', 'height': '300px'}"
+    [ngStyle.lt-lg]="{'padding-left': '20px'}">
+    <p class="header" 
+        fxLayout.lt-sm="row" 
+        fxLayoutAlign.lt-sm="center" 
+        [ngStyle.lt-sm]="{'font-size': '15px'}"
+        >THE POPULAR RESTAURANTS IN EPICURE :</p>
+    <swiper [config]="swiperConfig">
+        <app-card  *ngFor="let restaurant of restaurants" 
             [cardData]="restaurant" 
             [cardClass]="'popular-resto'">
-        </app-card>
+        </app-card> 
     </swiper>
-    <a class="link" href="#">All Restaurants
+    <a class="link" href="#"
+        fxHide.lt-sm 
+        fxLayoutAlign.gt-xs="end center" 
+        fxFlexOffset="50px"> All Restaurants
         <span><img src="/assets/icons/all-restaurants-arrows.svg"></span>
     </a>
 </div>

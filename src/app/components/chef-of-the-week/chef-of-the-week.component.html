@@ -1,21 +1,36 @@
 <div class="container">
-    <p class="header">CHEF OF THE WEEK :</p>
-    <div class="flex chef-container">
-        <div class="chef-image">
+    <p class="header" 
+        [ngStyle.lt-sm]="{'font-size': '14px'}">CHEF OF THE WEEK :</p>
+    <div class="chef-container" 
+        fxLayout="row wrap" 
+        fxLayoutAlign="start start" 
+        fxLayoutAlign.lt-lg="center start"
+        fxLayoutAlign.lt-md="center center">
+        <div class="chef-image" 
+            [ngStyle.lt-md]="{'width': '330px', 'height': '240px'}">
             <div class="chef-name">Yossi Shitrit</div>
         </div>
-        <p class="chef-info">Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two
+        <p class="chef-info" 
+            [ngStyle.lt-md]="{'padding': '20px 30px', 'font-size': '19px'}"
+            [ngStyle.lt-sm]="{'padding': '20px auto', 'font-size': '14px'}">
+            Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two
             decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in
             Moshav Udim. Shitrit's creativity and culinary acumen born of long experience are expressed in the every
             detail of each and
             every dish.</p>
     </div>
-    <div class="chef-resto">
-        <p class="header">Yossi's restaurants:</p>
-        <div class="flex card-list">
-            <div *ngFor="let restaurant of chefsRestaurants">
-                <app-card [cardData]="restaurant" [cardClass]="'chefs-resto'"></app-card>
-            </div>
+    <div class="chef-resto"
+    fxLayout="column" >
+        <p class="header" 
+            [ngStyle.lt-md]="{'font-size': '14px'}">Yossi's restaurants:</p>
+        <div class="card-list" 
+            fxLayoutAlign="start start">
+            <swiper [config]="swiperConfig">
+                <app-card *ngFor="let restaurant of chefsRestaurants" 
+                    [cardData]="restaurant"
+                    [cardClass]="'chefs-resto'">
+                </app-card>
+            </swiper>
         </div>
     </div>
 </div>

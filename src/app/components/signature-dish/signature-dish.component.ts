@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
-import { SwiperService } from '../../services/swiper.service';
-import { CardService } from '../../services/card.service'
+import { CardService } from 'src/app/services/card.service'
+import { ScreenWatcherService } from 'src/app/services/screen-watcher.service';
 
 @Component({
   selector: 'app-signature-dish',
@@ -13,21 +13,38 @@ import { CardService } from '../../services/card.service'
 export class SignatureDishComponent implements OnInit {
 
   swiperConfig: SwiperConfigInterface;
-  
+
   dishes = [];
+
+  constructor(
+    private screenWatcherService: ScreenWatcherService,
+    private cardService: CardService) {
+      this.swiperConfig = {
+        direction: 'horizontal',
+        slidesPerView: 1,
+        simulateTouch: true,
+        centeredSlidesBounds: true,
+        centeredSlides: true,
+        centerInsufficientSlides: true,
+      }
+  }
+
+  ngOnInit(): void {
+    this.adjustSwiperWidth()
+    this.getDishes()
+  }
 
   getDishes() {
     this.cardService.getDishes().subscribe(data => this.dishes = data);
   }
 
-  constructor(
-    private swiperService: SwiperService,
-    private cardService: CardService ) {
-    this.swiperConfig = this.swiperService.config
-    
-  }
-
-  ngOnInit(): void {
-    this.getDishes()
+  adjustSwiperWidth() {
+    this.screenWatcherService.screenWidth$.subscribe(screenWidth => {
+      if (screenWidth < 600) {
+        this.swiperConfig.width = 260;
+      } else {
+        this.swiperConfig.width = 360;
+      }
+    })
   }
 }

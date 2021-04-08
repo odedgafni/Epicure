@@ -1,31 +1,47 @@
-<nav fxFlex.gt-sm="100%" class="flex">
-    <div class="flex left-nav">
-        <div flexLayout='row' class="logo">
+<nav class="nav" 
+    fxLayout='row' 
+    fxLayoutAlign.gt-xs='space-around end' 
+    fxLayoutAlign.lt-sm='space-between center'
+    [ngStyle.lt-sm]="{'padding': '5px'}">
+    <div class="menu" 
+        fxLayout='row' 
+        fxLayoutAlign='start center' 
+        fxHide.gt-xs fxFlex.lt-sm="33">
+        <a href="#"><img src="/assets/icons/menu.svg"></a>
+    </div>
+    <div class="left-nav"
+        fxLayout='row' 
+        fxLayoutAlign='center center' 
+        fxFlex.lt-sm="33">
+        <div class="logo">
             <img src="/assets/logo/logo.jpg">
         </div>
-        <div fxHide.lt-md class="nav-title">
+        <div fxHide.lt-sm class="nav-title">
             <a routerLink="/">EPICURE</a>
         </div>
-        <div fxHide.lt-md class="nav-item">
+        <div class="nav-item" 
+            fxHide.lt-sm>
             <a routerLink="restaurants">Restaurants</a>
         </div>
-        <div fxHide.lt-md class="nav-item">
+        <div class="nav-item" 
+            fxHide.lt-sm>
             <a href="#">Chefs</a>
         </div>
     </div>
-    <div fxLayoutAlign.lt-md="end" fxLayoutAlign.gt-md="space-around" class="flex right-nav">
+    <div class="right-nav" fxLayout='row' fxLayoutAlign.lt-md="end" fxFlex.lt-sm="33" fxLayoutGap="20px" fxLayoutGap.gt-sm="30px"
+        fxLayoutAlign.gt-sm="space-around center" >
         <div fxHide.lt-md class="flex search">
             <input type="text" placeholder="Search for restaurant cuisine, chef">
             <img class="icon" src="/assets/icons/search-icon.svg">
         </div>
         <a fxHide.gt-sm href="#" class="icon">
-            <img src="/assets/icons/search-icon.svg">
+            <img [ngStyle.lt-sm]="{'width': '20px'}" src="/assets/icons/search-icon.svg">
         </a>
         <a href="#" class="icon">
-            <img src="/assets/icons/user-icon.svg">
+            <img [ngStyle.lt-sm]="{'width': '20px'}" src="/assets/icons/user-icon.svg">
         </a>
         <a href="#" class="icon">
-            <img src="/assets/icons/bag-icon.svg">
+            <img [ngStyle.lt-sm]="{'width': '20px'}" src="/assets/icons/bag-icon.svg">
         </a>
     </div>
 </nav>

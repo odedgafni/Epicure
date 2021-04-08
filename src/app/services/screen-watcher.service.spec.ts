@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SwiperService } from './swiper.service';
+import { ScreenWatcherService } from './screen-watcher.service';
 
-describe('SwiperService', () => {
-  let service: SwiperService;
+describe('ScreenWatcherService', () => {
+  let service: ScreenWatcherService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SwiperService);
+    service = TestBed.inject(ScreenWatcherService);
   });
 
   it('should be created', () => {
